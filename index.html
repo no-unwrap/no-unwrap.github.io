@@ -9,7 +9,15 @@
   <meta property="og:description" content="Computer science researcher and engineer working on computer vision, human-centered perception, and accessibility.">
   <meta property="og:url" content="https://no-unwrap.github.io">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://no-unwrap.github.io/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="No Unwrap banner: a dark circuit pattern with rust-orange accents">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://no-unwrap.github.io/assets/images/og-image.jpg">
+  <meta name="twitter:image:alt" content="No Unwrap banner: a dark circuit pattern with rust-orange accents">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
@@ -34,11 +42,13 @@
 <!-- ─── Hero ─── -->
 <header id="hero">
   <div class="hero-inner">
+    <img class="hero-avatar" src="assets/images/emblem.webp" width="120" height="120" alt="">
     <div class="hero-text">
       <h1>Jarek Reynolds</h1>
       <p class="subtitle">
         <span>Computer Science &mdash; Research &amp; Engineering</span>
-        <span>PhD Student, University of Colorado Boulder</span>
+        <span>Senior Systems Engineer, BAE Systems</span>
+        <span>PhD Candidate, University of Colorado Boulder</span>
       </p>
       <div class="hero-links">
         <a href="mailto:no.unwrap@gmail.com">Email</a>
@@ -54,8 +64,10 @@
 <!-- ─── About ─── -->
 <section id="about">
   <h2>About</h2>
-  <p>I am a PhD student in Computer Science at the University of Colorado Boulder, advised by <a href="https://dannagurari.colorado.edu/about/" target="_blank" rel="noopener"><strong>Dr. Danna Gurari</strong></a> and co-advised by <a href="https://medschool.cuanschutz.edu/mibh/about-us/our-team/jeffrey-r-hebert" target="_blank" rel="noopener"><strong>Dr. Jeffrey R. Hebert</strong></a>. My research focuses on disability-centered computer vision, human-centered perception, and the creation of datasets for underrepresented populations.</p>
-  <p>Prior to pursuing computer science, I served for six years in the United States Air Force as an Airborne Cryptologic Linguist and Tactical Support Operator, completing six combat deployments totaling 462 days in support of Operations Enduring Freedom and Iraqi Freedom. Traumatic brain injuries sustained during my service led me to the <a href="https://medschool.cuanschutz.edu/mibh" target="_blank" rel="noopener"><strong>Marcus Institute for Brain Health</strong></a>, where a clinical evaluation identified a fundamental disruption in my brain's ability to filter visual information. This experience serves as the foundation for my research.</p>
+  <p>I am a former Air Force airborne cryptologic linguist turned computer vision researcher and systems engineer. Driven by a commitment to enhancing national security and operational efficiency, I focus on developing solutions for complex, high-stakes problems in defense and intelligence.</p>
+  <p>Alongside my defense career, I am a PhD candidate in Computer Science at the University of Colorado Boulder, advised by <a href="https://dannagurari.colorado.edu/about/" target="_blank" rel="noopener"><strong>Dr. Danna Gurari</strong></a> and co-advised by <a href="https://medschool.cuanschutz.edu/mibh/about-us/our-team/jeffrey-r-hebert" target="_blank" rel="noopener"><strong>Dr. Jeffrey R. Hebert</strong></a>. My research focuses on disability-centered computer vision, human-centered perception, and the creation of datasets for underrepresented populations.</p>
+  <p>Prior to pursuing computer science, I served for six years in the United States Air Force as an Airborne Cryptologic Linguist and Tactical Support Operator, joined the initial cadre of the Airborne ISR Operator career field (1A8X2), and completed six combat deployments totaling 462 days in support of Operations Enduring Freedom and Iraqi Freedom. I later served as a mission commander aboard airborne intelligence platforms supporting joint special operations, and my operational work also included time as a JSOC augmentee.</p>
+  <p>Two experiences led me to my research. Supporting ISR missions showed me how much depends on interpreting visual data quickly and precisely. Then traumatic brain injuries sustained during my service led me to the <a href="https://medschool.cuanschutz.edu/mibh" target="_blank" rel="noopener"><strong>Marcus Institute for Brain Health</strong></a>, where a clinical evaluation identified a fundamental disruption in my brain's ability to filter visual information. This experience serves as the foundation for my research.</p>
   <p>I hold a B.S. and M.S. in Computer Science and am currently completing a Ph.D. in Computer Science at CU Boulder. Additionally, I earned an M.A. in Conflict Resolution from the University of Denver, a B.S. in International Security and Intelligence Studies from Bellevue University, and a Diploma in Persian Farsi from the Defense Language Institute Foreign Language Center.</p>
 </section>
 
@@ -63,17 +75,19 @@
 <section id="academia">
   <h2>Academia</h2>
   <p>My research investigates how visual attention and gaze behavior differ across diverse populations, with a focus on individuals with traumatic brain injury (TBI). I study saliency prediction and visual perception through a disability-centered lens, working to build datasets and models that better represent underserved communities.</p>
+  <p>I research, build, and evaluate deep learning and computer vision pipelines for modeling visual saliency, attention, and perceptual filtering in dense, real-world environments, particularly under atypical attentional conditions.</p>
   <p>I conduct this research in collaboration with the <a href="https://medschool.cuanschutz.edu/mibh" target="_blank" rel="noopener"><strong>Marcus Institute for Brain Health</strong></a> at the CU Anschutz Medical Campus. This work is conducted within the <a href="https://dannagurari.colorado.edu/research-group/" target="_blank" rel="noopener"><strong>Image and Video Computing Group</strong></a> at CU Boulder, which also leads the <a href="https://vizwiz.org/workshops/2026-vizwiz-grand-challenge-workshop/" target="_blank" rel="noopener"><strong>VizWiz Grand Challenge</strong></a> for blind and low-vision users.</p>
   <p>Broadly, my work aims to support the development of assistive technologies, clinical tools, and adaptive interfaces that account for differences in visual processing.</p>
 
   <h3>Research Interests</h3>
   <ul>
-    <li>Salient object detection</li>
+    <li>Salient object detection under attentional constraints</li>
+    <li>Perceptual filtering failure modes in densely cluttered scenes</li>
     <li>Hierarchical segmentation</li>
     <li>Disability-centered computer vision</li>
     <li>Privacy-preserving computer vision</li>
     <li>Saliency prediction and visual attention modeling</li>
-    <li>Dataset design, benchmarking, and evaluation for human-centered perception</li>
+    <li>Dataset design, benchmarking, and end-to-end model evaluation for human-centered perception</li>
   </ul>
 </section>
 
@@ -111,9 +125,9 @@
 <!-- ─── Industry ─── -->
 <section id="industry">
   <h2>Industry</h2>
-  <p>I work as a Senior Systems Engineer at <strong>BAE Systems</strong> in Boulder, where I develop RF mission systems for space-based architectures. My work focuses on building custom tools and algorithms that evaluate mission performance, inform architecture decisions, and refine system requirements.</p>
-  <p>Before joining BAE Systems, I worked as a software engineer at SHOTOVER Systems, served as a field service engineer aboard airborne intelligence platforms with Sierra Nevada Corporation, and spent six years as an airborne cryptologic linguist in the United States Air Force.</p>
-  <p>Broadly, my aim is a particular combination: cert-grade systems engineering, the discipline of building software that can be verified rather than merely tested, paired with real fluency at the model and data layer. Learned components are steadily entering safety-critical systems, and I want to be an engineer who can be trusted with both halves of that problem.</p>
+  <p>I work as a Senior Systems Engineer at <strong>BAE Systems</strong> in Boulder, where I develop RF mission systems for space-based architectures. My role focuses on the intersection of systems analysis and algorithmic modeling: I build custom tools and algorithms that evaluate mission performance, inform architecture decisions, and refine system requirements. My approach to time-sensitive problem-solving is shaped by firsthand operational experience and a strong foundation in software engineering, system design, and rigorous technical analysis.</p>
+  <p>Before joining BAE Systems, I worked as a software engineer at SHOTOVER Systems, served as a field service engineer and mission commander aboard airborne intelligence platforms with Sierra Nevada Corporation, and spent six years as an airborne cryptologic linguist in the United States Air Force.</p>
+  <p>Broadly, my aim is a particular combination: cert-grade systems engineering, the discipline of building software that can be verified rather than merely tested, paired with real fluency at the model and data layer. Learned components are steadily entering secure, safety-critical systems, and the models, the low-level systems they run on, and the assurance that they behave correctly are usually held by different people. I want to be an engineer who can be trusted with all three. Computer vision is where my depth is today. Systems programming in Rust and verifiable, safety-critical software are areas I am actively learning my way into.</p>
   <h3>Engineering Interests</h3>
   <ul>
     <li>Safety-critical and high-assurance software</li>
@@ -202,7 +216,7 @@
       <span class="year">2004 &ndash; 2010</span>
       <div>
         <strong>Airborne Cryptologic Linguist (1A8X1), Staff Sergeant</strong> &mdash; USAF<br>
-        <span class="detail">462 days deployed across six combat rotations (OEF/OIF) &middot; 10 Air Medals &middot; Air Force Achievement Medal &middot; Top Secret/SCI clearance &middot; Honorable Discharge</span>
+        <span class="detail">Initial cadre, Airborne ISR Operator career field (1A8X2) &middot; 462 days deployed across six combat rotations (OEF/OIF) &middot; 10 Air Medals &middot; Air Force Achievement Medal &middot; Top Secret/SCI clearance &middot; Honorable Discharge</span>
       </div>
     </div>
   </div>
