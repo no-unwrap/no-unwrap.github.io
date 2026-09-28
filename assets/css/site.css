@@ -16,8 +16,8 @@
   --border: #e3d9cc;
   --max-width: 780px;
   --hero-bg: #0b0b0b;
-  --hero-text: #f2efe9;
-  --hero-text-secondary: rgba(242, 239, 233, 0.78);
+  --hero-text: #f3e9d8;
+  --hero-text-secondary: rgba(243, 233, 216, 0.8);
   --hero-accent: #e8763f;
 }
 
@@ -117,22 +117,23 @@ nav {
 
 /* ─── Hero ─── */
 #hero {
-  /* A profile card at the page's content width, like a LinkedIn header. */
-  width: min(var(--max-width), 100% - 32px);
-  margin: 24px auto 0;
-  background: var(--hero-bg);
-  border-radius: 14px;
+  /* The banner fills the top section at full brightness. Only the glass
+     panel behind the text is darkened, so the rest stays fully visible. */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(380px, 30vw, 480px);
+  padding: 40px 24px;
   overflow: hidden;
+  background: var(--hero-bg);
   border-bottom: 3px solid var(--accent-light);
-  box-shadow: 0 12px 32px rgba(31, 26, 23, 0.18);
-  padding-bottom: 28px;
   color: var(--hero-text);
 }
 
-/* The banner sits at full brightness, framed 4:1 like a LinkedIn banner. */
 .hero-banner {
-  aspect-ratio: 4 / 1;
-  overflow: hidden;
+  position: absolute;
+  inset: 0;
 }
 
 .hero-banner img {
@@ -143,26 +144,33 @@ nav {
   object-position: center;
 }
 
+/* Frosted-glass panel: blurs and lightly darkens only the patch of
+   banner behind the text, framed with a thin rust edge. */
 .hero-inner {
-  padding: 0 24px;
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 10px;
+  max-width: 100%;
+  padding: 26px 40px 28px;
+  background: rgba(11, 11, 11, 0.55);
+  -webkit-backdrop-filter: blur(8px) saturate(115%);
+  backdrop-filter: blur(8px) saturate(115%);
+  border: 1px solid rgba(232, 118, 63, 0.45);
+  border-radius: 18px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
 }
 
-/* The emblem overlaps the banner's bottom edge, like a profile photo. */
 .hero-avatar {
   flex-shrink: 0;
-  width: 112px;
-  height: 112px;
-  margin-top: -56px;
-  position: relative;
-  z-index: 1;
+  width: 104px;
+  height: 104px;
   border-radius: 50%;
-  border: 4px solid var(--hero-bg);
-  box-shadow: 0 0 0 1px rgba(242, 239, 233, 0.2), 0 8px 24px rgba(0, 0, 0, 0.6);
+  border: 3px solid var(--hero-bg);
+  box-shadow: 0 0 0 1px rgba(232, 118, 63, 0.55), 0 8px 24px rgba(0, 0, 0, 0.6);
   background: var(--hero-bg);
 }
 
@@ -186,6 +194,11 @@ nav {
 .subtitle span {
   display: block;
   text-wrap: balance;
+}
+
+.subtitle span:first-child {
+  color: var(--hero-accent);
+  font-weight: 600;
 }
 
 .hero-links {
@@ -381,20 +394,17 @@ footer a:hover {
 
 /* ─── Responsive ─── */
 @media (max-width: 600px) {
-  /* Phones: the card spans the screen and the banner is a little taller. */
+  /* Phones: the panel spans nearly the full width over the banner. */
   #hero {
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .hero-banner {
-    aspect-ratio: 3 / 1;
+    min-height: 0;
+    padding: 48px 16px 32px;
   }
 
   .hero-inner {
+    width: 100%;
     gap: 6px;
+    padding: 22px 18px 24px;
+    background: rgba(11, 11, 11, 0.5);
   }
 
   .subtitle {
@@ -402,9 +412,8 @@ footer a:hover {
   }
 
   .hero-avatar {
-    width: 96px;
-    height: 96px;
-    margin-top: -48px;
+    width: 88px;
+    height: 88px;
   }
 
 
