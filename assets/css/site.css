@@ -62,8 +62,9 @@ a:hover {
 h1,
 h2,
 h3,
-.nav-name,
-#hero {
+nav,
+#hero,
+footer {
   font-family: var(--font-display);
   letter-spacing: -0.01em;
 }
