@@ -117,14 +117,14 @@ nav {
 
 /* ─── Hero ─── */
 #hero {
-  /* The banner fills the top section at full brightness. Only the glass
-     panel behind the text is darkened, so the rest stays fully visible. */
+  /* The banner fills the top section at full brightness, with nothing
+     darkening it. The text sits directly on top of it. */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(380px, 30vw, 480px);
-  padding: 40px 24px;
+  min-height: 320px;
+  padding: 40px 0;
   overflow: hidden;
   background: var(--hero-bg);
   border-bottom: 3px solid var(--accent-light);
@@ -147,27 +147,21 @@ nav {
 /* Frosted-glass panel: blurs and lightly darkens only the patch of
    banner behind the text, framed with a thin rust edge. */
 .hero-inner {
+  /* The 24px side padding matches the nav and main column so edges align. */
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 24px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 10px;
-  max-width: 100%;
-  padding: 26px 40px 28px;
-  background: rgba(11, 11, 11, 0.55);
-  -webkit-backdrop-filter: blur(8px) saturate(115%);
-  backdrop-filter: blur(8px) saturate(115%);
-  border: 1px solid rgba(232, 118, 63, 0.45);
-  border-radius: 18px;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  gap: 28px;
 }
 
 .hero-avatar {
   flex-shrink: 0;
-  width: 104px;
-  height: 104px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: 3px solid var(--hero-bg);
   box-shadow: 0 0 0 1px rgba(232, 118, 63, 0.55), 0 8px 24px rgba(0, 0, 0, 0.6);
@@ -183,12 +177,14 @@ nav {
   font-weight: 700;
   margin-bottom: 4px;
   color: var(--hero-text);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9), 0 0 16px rgba(0, 0, 0, 0.75);
 }
 
 .subtitle {
   font-size: 1.1rem;
-  color: var(--hero-text-secondary);
+  color: var(--hero-text);
   margin-bottom: 14px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9), 0 0 14px rgba(0, 0, 0, 0.8);
 }
 
 .subtitle span {
@@ -205,7 +201,6 @@ nav {
   display: flex;
   gap: 12px 16px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .hero-links a {
@@ -214,7 +209,9 @@ nav {
   color: var(--hero-text);
   border: 1px solid var(--hero-accent);
   border-radius: 4px;
-  background: rgba(232, 118, 63, 0.1);
+  background: rgba(11, 11, 11, 0.35);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
@@ -394,17 +391,16 @@ footer a:hover {
 
 /* ─── Responsive ─── */
 @media (max-width: 600px) {
-  /* Phones: the panel spans nearly the full width over the banner. */
+  /* Phones: the emblem sits above the text, still directly on the banner. */
   #hero {
     min-height: 0;
-    padding: 48px 16px 32px;
+    padding: 36px 0 32px;
   }
 
   .hero-inner {
-    width: 100%;
-    gap: 6px;
-    padding: 22px 18px 24px;
-    background: rgba(11, 11, 11, 0.5);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 
   .subtitle {
